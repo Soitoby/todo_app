@@ -1,18 +1,27 @@
 import os
-import termcolor, questionary # type: ignore
+import termcolor, questionary 
 
 
 class task():
     def __init__(self, name,discription):
+        
         self.name = name
-        self.path = f"task/{name}/"
+        self.path = f"task/{name}"
         self.discription = discription
         self.status = "create"
+        os.mkdir(self.path)
+
         file_create = ["discription.txt","status.txt"]
-        text_create = [discription, "create"]
-        for i in file_create,text_create:
-            with open(f"{self.path}{i}","w") as f:
-                f.write(text_create)
+        file_write = [self.discription,self.status]
+        x = 0     
+        for i in file_create:  
+             
+            with open(f"{self.path}/{i}", "x") as f:
+                f.write(file_write[x])
+            x+=1
+
+
+
 
         print(termcolor.colored(f"create {name}", "green"))
         

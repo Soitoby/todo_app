@@ -22,7 +22,9 @@ def main():
         try:
             match (choice):
                 case "create task":
-                    task_lib.create_task()
+                    name_task = input("input name task:")
+                    discription = input("input discription:")
+                    task_lib.task(name_task,discription)
                 case "watch task":
                     task_lib.watch_task()
                 case "remove task":
@@ -33,9 +35,9 @@ def main():
                     print("uncorrect input")
 
         except TypeError:
-            print(termcolor.color("uncorrect type", "red"))
+            print(termcolor.colored("uncorrect type", "red"))
         except ValueError:
-            print(termcolor.color("pls input", "red"))
+            print(termcolor.colored("pls input", "red"))
 
 
 if __name__ == "__main__":
