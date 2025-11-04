@@ -42,3 +42,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+# 1.word watch task
+# 2. remove task
